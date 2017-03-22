@@ -1,0 +1,147 @@
+---
+layout: page
+title:  "Week 3"
+date:   2017-03-22 10:21:06 +0530
+permalink: /week3/
+---
+
+_Starting this week, we will be posting lab reviews that will highlight some coding practices you can follow to produce efficient, good-looking code for your IC250 Lab Assignments or anywhere else. Ask your TAs if you need help with anything in here._
+
+These are not mandatory to follow, but you will get extra points if you do so :), and will significantly improve your code. This week we will cover Labs 0-3. We start with some basics, and will move o to more advanced topics in the folowing weeks. Let's get started.
+
+#### Contents
+1. [Indentation of code](#indent)
+2. [Naming Variables](#variables)
+3. [Dynamic allocation of arrays](#array)
+
+***
+<a name="indent"></a>
+#### 1. Code readability - Indentation
+Importance of identing one's code cannot be stressed enough. Identation is just formatting of the code to make it more readable and give it clarity. Take an example of a function to print results of a list of students based on their marks:
+
+```c
+/* Indented code */
+void getResult(int student_mark[], int size){
+	int i;
+	for(i = 0; i < size; i++){
+		if(student_mark[i] < 33)
+			printf("Student %d: Fail", i);
+		else	
+			printf("Student %d: Pass", i);
+	}
+}
+```
+Now take a look at this horrible looking piece of code:
+
+```c
+/* Unindented code */
+void getResult(int student_mark[], int size){
+int i;
+for(i = 0; i < size; i++){
+if(student_mark[i] < 33)
+printf("Student %d: Fail", i);
+else	
+printf("Student %d: Pass", i);
+}
+}
+```
+This code is hard to read, and the logic is harder to interpret. If we had nested loops in this form, it would really test your patience. Moral: Indent your code to make your (and our) lives simpler. Identation is done using a tab for each level of nesting.
+
+**Pro tip**: Indent 
+
+Refer [this link][indent-styles] for two common styles of identation.  
+For a deeper read, refer: [https://www2.cs.arizona.edu/~mccann/indent_c.html](https://www2.cs.arizona.edu/~mccann/indent_c.html)
+
+***
+
+<a name="variables"></a>
+#### 2. Code readability - Variable names
+Declaring descriptive variable names can go a long way in making your code easy to interpret. Same goes for function names also. Consider the following example:
+
+```c
+double getAverage(double arr[], int size);
+
+int main(int argc, char ** argv){
+	double rain_in_mm[3] = {300.3, 421.2, 512.5};
+	double average_rain = getAverage(rain_in_mm, 3);
+	printf("Average annual rainfall over three years is: %f");
+	return 0;
+}
+
+double getAverage(double arr[], int size){
+	int i;
+  	double avg;
+  	double sum = 0;
+  	for (i = 0; i < size; ++i) {
+   	  sum += arr[i];
+  	}
+  	avg = sum / size;
+  	return avg;
+}
+```
+
+This code prints the average annual rainfall over three years. Notice the variable names `rain_in_mm`, `average_rain` and the function name `getAverage`. These names give an idea of what is the variable/function about. Which makes it a _lot_ easier to understand what our code is ultimately trying to do. Single letter variable names like `i` are used normally for array indices and iterators.  
+
+It all depends on the context. But descriptive names, even if they take longer to type, are better than two or three letter names that make no sense. Checkout the code below (which is **_not_** a good example):
+
+```c
+double ar(double arr[], int size);
+
+int main(int argc, char ** argv){
+	double a[3] = {300.3, 421.2, 512.5};
+	double avr = ar(a, 3);
+	printf("Average annual rainfall over three years is: %f");
+	return 0;
+}
+
+double ar(double ax[], int sz){
+	int i;
+  	double ax;
+  	double s = 0;
+  	for (i = 0; i < sz; ++i) {
+   	  s += ax[i];
+  	}
+  	ax = s / sz;
+  	return ax;
+}
+```
+Irritating to read, right? It may be okay for smaller pieces of code, but as you write more and more code, you may need to revisit older code to make some changes. And then you may not even understand _your_ own code or keep track of all variable names! Let's keep it clean and descriptive for our own sakes.
+
+***
+
+<a name="array"></a>
+#### 3. Dynamic array allocation
+Often people use static memory allocation where dynamic memory allocation is required. When we declare some array whose size is unknown, it is a better practice to use dynamic memory allocation. Static memory allocation may not give compile or runtime errors for smaller arrays, but when the number of elements in the array are big enough, this results in the dreaded 'segmentation fault'. Take a look at these code snippets:
+```c
+/* Static memory allocation */
+int size;
+scanf("%d", &size);
+int arr[size];
+```
+This code has the risk of running into insufficient memory issues since the compiler can only allocate limited amount of memory during compilation. But if we allocate memory dynamically (_as shown below_), size is limited only by amount of memory in your system.
+```c
+/* Dynamic memory allocation */
+int size;
+scanf("%d", &size);
+int * arr = (int *)malloc(sizeof(int)*size);
+
+//Some code here
+
+free(arr);
+```
+Remember to free the allocated memory by using `free()` after you are done  manipulating the array.
+
+***
+
+#### Coming Soon:
+* File I/O
+* Writing reusable, modular code
+* Case sensitive compare
+* Flow of menu-driven programs
+
+
+##### _Disclaimer: The C codes given in this site are not complete and are not guaranteed to compile and/or run. The purpose of displaying these code snippets is to supplement the review discussion._
+
+
+[indent-styles]: https://www.csee.umbc.edu/courses/undergraduate/202/Spring99/abaumg1/indent.html
+
