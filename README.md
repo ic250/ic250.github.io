@@ -1,7 +1,5 @@
-IC250
-------
-
 [ic250.github.io](https://ic250.github.io)
+------------------------------------------
 
 This is the review site for IC 250 Data Structures and Algorithms course at IIT Mandi, to help students develop basic coding skills. Based on lab sessions, we review relevant topics every week.
 Please contact us if you have any issues that you want us to post about or if you have any suggestions.
