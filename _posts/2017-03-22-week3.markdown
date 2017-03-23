@@ -7,7 +7,7 @@ permalink: /week3/
 
 _Starting this week, we will be posting lab reviews that will highlight some coding practices you can follow to produce efficient, good-looking code for your IC250 Lab Assignments or anywhere else. Ask your TAs if you need help with anything in here._
 
-These are not mandatory to follow, but you will get extra points if you do so :), and will significantly improve your code. This week we will cover Labs 0-3. We start with some basics, and will move o to more advanced topics in the folowing weeks. Let's get started.
+These are not mandatory to follow, but you will get extra points if you do so :), and will significantly improve your code. This week we will cover Labs 0-3. We start with some basics, and will move to more advanced topics in the folowing weeks. Let's get started.
 
 #### Contents
 1. [Indentation of code](#indent)
@@ -47,7 +47,7 @@ printf("Student %d: Pass", i);
 ```
 This code is hard to read, and the logic is harder to interpret. If we had nested loops in this form, it would really test your patience. Moral: Indent your code to make your (and our) lives simpler. Identation is done using a tab for each level of nesting.
 
-**Pro tip**: Indent 
+**Pro tip**: To indent your code in the `vim` editor, open your code by typing `vim example.c` in your terminal. Press `v`, `G` and then `=` to indent your complete code! What we did here was to go into the `visual` mode(v) in vim, select lines from beginning to the end(G), and indent them(=). `vim` is a good terminal editor you can use. **Sublime Text**([download](http://www.sublimetext.com/3)) is another great editor you can use to write code.
 
 Refer [this link][indent-styles] for two common styles of identation.  
 For a deeper read, refer: [https://www2.cs.arizona.edu/~mccann/indent_c.html](https://www2.cs.arizona.edu/~mccann/indent_c.html)
