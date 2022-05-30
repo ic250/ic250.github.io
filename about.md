@@ -14,16 +14,16 @@ Please contact us if you have any issues that you want us to post about or if yo
 
 **Ahmed Karanath**  
 Email: [ahmed_k@students.iitmandi.ac.in](mailto:ahmed_k@students.iitmandi.ac.in)  
-Phone: 9816923609
+Phone: xxxx
 
 **Aswin A**  
 Email: [a_a@students.iitmandi.ac.in](mailto:a_a@students.iitmandi.ac.in)  
-Phone: 9816923863
+Phone: xxxx
 
 **Kansul Mahrifa**  
 Email: [kansul_mahrifa_c@students.iitmandi.ac.in](mailto:kansul_mahrifa_c@students.iitmandi.ac.in)  
-Phone: 9816923813
+Phone: xxxx
 
 **Deepanshu Sapra**  
 Email: [deepanshu__sapra@students.iitmandi.ac.in](mailto:deepanshu__sapra@students.iitmandi.ac.in)  
-Phone: 9816923822
+Phone: xxxx
